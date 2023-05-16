@@ -12,12 +12,14 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
-    "ingest": "tsx -r dotenv/config scripts/ingest-data.ts"
+    "ingest": "tsx -r dotenv/config scripts/ingest-data.ts",
+    "ingests": "tsx -r dotenv/config scripts/ingest-supabase.ts"
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "^2.0.1",
     "@pinecone-database/pinecone": "0.0.12",
     "@radix-ui/react-accordion": "^1.1.1",
+    "@supabase/supabase-js": "^2.22.0",
     "clsx": "^1.2.1",
     "dotenv": "^16.0.3",
     "langchain": "0.0.55",
@@ -27,6 +29,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.5",
+    "supabase": "^1.60.1",
     "tailwind-merge": "^1.10.0"
   },
   "devDependencies": {
