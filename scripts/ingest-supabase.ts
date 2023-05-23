@@ -43,7 +43,7 @@ export const run = async () => {
     await SupabaseVectorStore.fromDocuments(docs, embeddings, {
       client,
       tableName: "documents",
-      textKey: 'text',
+    //   textKey: 'text',
     });
   } catch (error) {
     console.log('error', error);

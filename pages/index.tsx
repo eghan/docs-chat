@@ -12,6 +12,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { SourceSelect } from '../components/ui/SourceSelect';
+
 
 export default function Home() {
   const [query, setQuery] = useState<string>('');
@@ -30,7 +32,14 @@ export default function Home() {
       },
     ],
     history: [],
-  });
+  });  
+  
+  const [source, setSource] = useState<string>('');
+
+  const handleSourceChange = (event: any) => {
+    setSource(event.target.value);
+    // Handle source change here
+  }
 
   const { messages, history } = messageState;
 
@@ -127,6 +136,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
             Chat With Your Applicant Docs
           </h1>
+          <SourceSelect onChange={handleSourceChange} />
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
