@@ -42,7 +42,7 @@ export const run = async () => {
     //embed the PDF documents
     await SupabaseVectorStore.fromDocuments(docs, embeddings, {
       client,
-      tableName: "documents",
+      tableName: "shadowsoup",
     //   textKey: 'text',
     });
   } catch (error) {
